@@ -7,18 +7,19 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,400i,500' rel='stylesheet'>
 
   <link rel="stylesheet" href="../include/reset.css">
-  <link rel="stylesheet" href="../include/debugg.css">
+  <link rel="stylesheet" href="./include/debug.css">
   <link rel="stylesheet" href="../include/style.css">
-  <link rel="stylesheet" href="../riemann.css">
+  <link rel="stylesheet" href="riemann.css">
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async>	MathJax.Hub.Register.StartupHook("End",function () {$("#loading").hide(); $("#content").css({"display": "block"})});</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async>	MathJax.Hub.Register.StartupHook("End",function () {$("#loading").hide(); $("#content").css({"height": "auto"})});</script>
 
-
-  <script type="text/javascript" src="riemann.js"></script>
-
-  
+  <script src="../include/Algebrite/dist/algebrite.bundle-for-browser.js"></script>
+  <script src="../include/nerdamer/nerdamer.core.js"></script>
 
   <title>Sume Riemann</title>
 </head>
@@ -29,41 +30,6 @@
     <header class="site_header">
 
     </header>
-
-    <article id="the-cosmos">
-
-      <h1>The cosmos</h1>
-
-      <h2>It all began here</h2>
-      <p>
-        <a href="#the-cosmos"><em>First paragraph</em></a>
-        <strong>Lorem</strong> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-
-      <p>
-        <em>Second paragraph</em>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-
-    </article>
-
-
-    <article id="the-cosmos_2">
-
-      <h1>The cosmos</h1>
-
-      <h2>It all began here</h2>
-      <p>
-        <a href="#the-cosmos"><em>First paragraph</em></a>
-        <strong>Lorem</strong> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-
-      <p>
-        <em>Second paragraph</em>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-
-    </article>
     <article class="main_article">
       <div id="riemann_sum">
         <form action="#">
@@ -78,12 +44,19 @@
           $$\int_0^1x \diff x = \frac{1}{2}$$
         </div>
 
-        <figure class="size_2">
-          <canvas id="riemann_sum">
+        <figure class="size_4">
+          <div id="riemann_img">
 
-          </canvas>
+          </div>
         </figure>
         <figcaption><p><em>Riemann Sums</em></p></figcaption>
+        <form action="#">
+          <input type="range" id="div_number" class="slider" name="number" value="5" min="1" max="30">
+        </form>
+        <div id="sum_output">
+
+        </div>
+
       </div>
     </article>
 
@@ -92,6 +65,9 @@
 
     <footer>
   </div>
+
+  <script type="text/javascript" src="riemann.js"></script>
+
 
 </body>
 </html>

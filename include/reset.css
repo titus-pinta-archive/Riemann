@@ -5,8 +5,15 @@ body, body * {
   margin:            unset;
   box-sizing:        unset;
   padding:           unset;
+  border:            unset;
   font-size:         unset;
   color:             unset;
   text-decoration:   unset;
+
+}
+
+body {
+
+  background-color: hsl(192, 15%, 97%);
 
 }

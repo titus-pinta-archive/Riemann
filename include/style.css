@@ -2,7 +2,7 @@
 article {
 	display: grid;
 	grid-template-columns: 1fr 0.25in [start] 1in 10.5in 1in [end] 0.25in 1fr;
-	padding: 0.5in 0;
+	padding: 0.4in 0;
 }
 
 @media (max-width: 13in) {
@@ -11,7 +11,7 @@ article {
 	}
 }
 
-article  * {
+article > * {
 	grid-column: start / end;
 }
 
@@ -83,17 +83,21 @@ a {
 
 /*figure*/
 
-figure img, figure canvas {
+figure img {
 	display: block;
 	width: 100%;
 }
 
 figcaption p {
 	text-align: center;
-	color: hsl(0, 0%, 30%);
+	color: hsl(210, 29%, 39%);
 }
 
 /*form*/
+
+form {
+	margin: 0.1rem 0.1rem;
+}
 
 form .labeled_input {
 	display: flex;
@@ -105,11 +109,50 @@ form .labeled_input label {
 
 form input {
 	width: 100%;
-	padding: 0.3rem 0.3rem;
+	padding: 0.3em 0.3em;
+	background-color: hsl(192, 15%, 100%);
+	outline-offset: -0.1em;
+	outline-style: solid;
+	outline-width: 0.1em;
+	outline-color:  hsl(192, 15%, 44%);
 }
 
 form input[type=text]:focus{
-	outline-color: #3498db;
+	/*outline-color:  hsl(204, 64%, 64%);*/
+}
+
+.slider {
+	outline-offset: -0.1rem;
+	outline-style: solid;
+	outline-width: 0.1rem;
+	outline-color:  hsl(192, 15%, 44%);
+
+	padding: 0;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1.5rem;
+  background: hsl(192, 15%, 100%);
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background:  hsl(204, 64%, 44%);
+	outline-offset: -0.1rem;
+	outline-style: solid;
+	outline-width: 0.1rem;
+	outline-color:  hsl(204, 64%, 44%);
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #4CAF50;
+  cursor: pointer;
 }
 
 /*utils*/
@@ -122,11 +165,12 @@ form input[type=text]:focus{
 }
 
 #content {
-	display: none;
+	height: 0;
+	overflow: hidden;
 }
 
 #loading {
-	background-color: #ecf0f1;
+	background-color: hsl(192, 15%, 97%);
 	position: absolute;
 	top: 0;
 	left: 0;

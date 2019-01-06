@@ -1,0 +1,117 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+  
+  
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,400i,500' rel='stylesheet'>
+
+  <link rel="stylesheet" href="include/reset.css">
+  <link rel="stylesheet" href=".include/debug.css">
+  <link rel="stylesheet" href=".include/style.css">
+  <link rel="stylesheet" href="riemann.css">
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async>	MathJax.Hub.Register.StartupHook("End",function () {$("#loading").hide(); $("#content").css({"display": "block"})});</script>
+
+  <script src="../include/Algebrite/dist/algebrite.bundle-for-browser.js"></script>
+  <script src="../include/nerdamer/nerdamer.core.js"></script>
+
+  <title>Sume Riemann</title>
+  
+  <style>
+	.svg-container {
+		width: 100%;
+	}
+  </style>
+  
+</head>
+<body>
+  <div class="center" id="loading"><img src="https://www.fasebj.org/ux3/widgets/publication-content/images/spinner.gif"></div>
+
+  <div id="content">
+    <header class="site_header">
+
+    </header>
+    <article class="main_article">
+      <div id="riemann_sum">
+        <form action="#">
+          <div class="labeled_input">
+            <label>\(f(x)=\)</label>
+            <input type="text" name="function" id="int_input" value="x">
+          </div>
+        </form>
+
+        <div id="int_output">
+          $$\newcommand{\diff}{\mathop{\rm d}\nolimits}$$
+          $$\int_0^1x \diff x = \frac{1}{2}$$
+        </div>
+
+        <figure class="size_2">
+          <div id="riemann_img">
+
+          </div>
+        </figure>
+        <figcaption><p><em>Riemann Sums</em></p></figcaption>
+      </div>
+    </article>
+
+
+    <footer class="site_foot">
+
+    <footer>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  	<script>
+	$(document).ready(function(){
+		var trace1 = {
+  x: [1, 2, 3, 4],
+  y: [10, 15, 13, 17],
+  mode: 'markers',
+  name: 'Scatter'
+};
+
+var trace2 = {
+  x: [2, 3, 4, 5],
+  y: [16, 5, 11, 9],
+  mode: 'lines',
+  name: 'Lines'
+};
+
+var trace3 = {
+  x: [1, 2, 3, 4],
+  y: [12, 9, 15, 12],
+  mode: 'lines+markers',
+  name: 'Scatter + Lines'
+};
+
+var data = [ trace1, trace2, trace3 ];
+
+var layout = {
+  title:'Adding Names to Line and Scatter Plot'
+};
+
+Plotly.newPlot('riemann_img', data, layout, {responsice: 'true'});	}); </script>
+	
+</body>
+  
+  
+  
+  </html>
+  
+  
+  
+  

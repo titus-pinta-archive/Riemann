@@ -3,3 +3,18 @@
 	height: 5rem;
 
 }
+
+#sum_output {
+
+	height: 2rem;
+
+}
+
+#riemann_img {
+	background-color: hsl(192, 15%, 99%);
+	height:550px;
+	border-style: solid;
+	border-width: 0.1em;
+	border-color: hsl(192, 15%, 44%);
+	padding: 0.3rem 0.5rem;
+}
