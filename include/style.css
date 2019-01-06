@@ -1,0 +1,141 @@
+
+article {
+	display: grid;
+	grid-template-columns: 1fr 0.25in [start] 1in 10.5in 1in [end] 0.25in 1fr;
+	padding: 0.5in 0;
+}
+
+@media (max-width: 13in) {
+	article {
+		grid-template-columns: 1fr 0 [start] 10% 80% 10% [end] 0 1fr;
+	}
+}
+
+article  * {
+	grid-column: start / end;
+}
+
+/*text contents style*/
+
+h2, p:not(:last-child) {margin-bottom: 2.4rem;}
+
+
+h1 {
+	font: 700 2.0rem/1.2 "Roboto";
+	color: hsl(210, 29%, 19%);
+}
+
+h2 {
+	font: 400 1.5rem/1.2 "Roboto";
+	color: hsl(210, 29%, 27%);
+}
+
+h3 {
+	font: 700 1rem/1.2 "Roboto";
+	color: hsl(210, 29%, 20%);
+}
+
+time {
+	font: 700 1rem/1.2 "Roboto";
+	color: hsl(210, 29%, 35%);
+}
+
+p {
+	font: 400 1rem/1.5 "Roboto";
+	color: hsl(210, 29%, 29%);
+	text-align: justify;
+}
+
+div {
+	font: 400 1rem/1.5 "Roboto";
+	color: hsl(210, 29%, 29%);
+	text-align: justify;
+}
+
+label {
+	font: 400 1rem/1.5 "Roboto";
+	color: hsl(210, 29%, 29%);
+	text-align: justify;
+}
+
+a {
+	color: hsl(210, 29%, 29%);
+}
+
+.underline {
+	box-shadow: inset 0 -0.1em black;
+}
+
+/*sizes*/
+
+.size_1 {
+	grid-column: 4 / 5;
+}
+.size_2 {
+	grid-column: 3 / 6;
+}
+.size_3 {
+	grid-column: 2 / 7;
+}
+.size_4 {
+	grid-column: 1 / 8;
+}
+
+/*figure*/
+
+figure img, figure canvas {
+	display: block;
+	width: 100%;
+}
+
+figcaption p {
+	text-align: center;
+	color: hsl(0, 0%, 30%);
+}
+
+/*form*/
+
+form .labeled_input {
+	display: flex;
+}
+
+form .labeled_input label {
+	padding: 0.3rem 0.5rem;
+}
+
+form input {
+	width: 100%;
+	padding: 0.3rem 0.3rem;
+}
+
+form input[type=text]:focus{
+	outline-color: #3498db;
+}
+
+/*utils*/
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+#content {
+	display: none;
+}
+
+#loading {
+	background-color: #ecf0f1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9999999;
+}
+
+#loading img {
+	width: 10rem;
+	height: 10rem;
+}
